@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
-const router = express.Router();
 
-router.get("/", (req, res) => {
+// Use the router
+app.use("/", (req, res) => {
   res.status(200).json({ message: "hello world" });
 });
 
-app.listen(8000, () => {
-  console.log("server listening on");
-});
+// Export the app for Vercel
+module.exports = app;
