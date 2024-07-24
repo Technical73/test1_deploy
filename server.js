@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-
-// Use the router
-app.use("/", (req, res) => {
+const router = express.Router();
+router.get("/", (req, res) => {
   res.status(200).json({ message: "hello world" });
 });
+app.use(router);
 
 // Export the app for Vercel
-module.exports = app;
+module.exports = router;
